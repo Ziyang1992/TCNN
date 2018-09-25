@@ -1,6 +1,5 @@
 # TCNN
 # This reposity contains the source code to replicate the numerical tests in "Multiple-Scattering Media Imaging via End-to-End Neural Network"
-# First, you should 
 TCNN.tensorflow
 
 Tensorflow implementation of TCNN Networks for Multiple Scattering imaging. 
@@ -15,6 +14,7 @@ Prerequisites
 - The results were obtained after training for ~6-7 hrs on a 12GB NVIDIA 1080Ti.
 - The code was originally written and tested with tensorflow 1.6.0 and python3.6.4. 
 - To train model simply execute python multiple scattering imaging.py
+- The dataset can be download in https://rice.app.box.com/v/TransmissionMatrices
 
 Results
 
@@ -50,7 +50,4 @@ Now for the gradients,
 
       
 
-Useful Links
-
-- Video of the presentaion given by the authors on the paper - link 
 
