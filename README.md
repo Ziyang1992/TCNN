@@ -1,7 +1,7 @@
 # TCNN
 # This reposity contains the source code to replicate the numerical tests in "Multiple-Scattering Media Imaging via End-to-End Neural Network"
 TCNN.tensorflow
-
+![](https://github.com/Ziyang1992/TCNN/blob/master/1.png)
 Tensorflow implementation of TCNN Networks for Multiple Scattering imaging. 
 
 1. Prerequisites
@@ -19,9 +19,10 @@ Prerequisites
 Results
 
 Results were obtained by training the model in batches of 2 with resized image of 256x256. Note that although the training is done at this image size - Nothing prevents the model from working on arbitrary sized images. No post processing was done on the predicted images. Training was done for 9 epochs - The shorter training time explains why certain concepts seem semantically understood by the model while others were not. Results below are from randomly chosen images from validation dataset.
-
+![](https://github.com/Ziyang1992/TCNN/blob/master/5.png)
+![](https://github.com/Ziyang1992/TCNN/blob/master/4.png)
 Pretty much used the same network design as in the reference model implementation of the paper in caffe. The weights for the new layers added were initialized with small values, and the learning was done using Adam Optimizer (Learning rate = 1e-4). 
-![](https://github.com/Ziyang1992/TCNN/blob/master/1.png)
+
    
 
    
