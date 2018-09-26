@@ -167,8 +167,6 @@ if type == 'train':
     saver = tf.train.Saver()
     tf.global_variables_initializer().run()
     time = 0
-    plt.ion()
-    plt.figure()
     loop = 0
     for i in range(iteration):
         times = i % batchnum
@@ -185,14 +183,8 @@ if type == 'train':
             vbatch1 = x_validation1[indice1[0] % kfolds:(batchsize + indice1[0]) % kfolds, :]
             vbatch2 = y_validation1[indice1[0] % kfolds:(batchsize + indice1[0]) % kfolds, :]
             test_accuracy, summary_str1 = sess.run([accuracy, loss_summary], feed_dict={x: vbatch1, y_: vbatch2,keep_prob : 1})
-            print("step %d, test accuracy%g" % (i, test_accuracy))
+            print("step %d, test accuracy%g" % (i, validation_accuracy))
             validation_writer.add_summary(summary_str1, i)
-            c = refinal.eval(feed_dict={x: x_test[time % y_test.shape[0]:time % y_test.shape[0]+1, :], y_: y_test[time%y_test.shape[0]:time%y_test.shape[0]+1, :], keep_prob : 1})
-            plt.imshow(np.reshape(c[0, :], [imagesize, imagesize], 'F'), cmap='Greys_r')
-            time = time + 1
-            plt.show()
-            plt.pause(1)
-            plt.close()
             training = True
             trainable = True
         train_step.run(feed_dict={x: batch1, y_: batch2, keep_prob : 0.5})
